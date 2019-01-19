@@ -36,18 +36,10 @@
         <span class="item-header-text">附近商家</span>
         <span class="item-header-controlbox">
           <span class="controlbox-tag">排序：</span>
-          <label>
-            <span class="controlbox-name" :class="{'active': filterVal == 'goal'}">评分</span>
-            <input type="radio" name="order" value="goal" v-model="filterVal">
-          </label>
-          <label>
-            <span class="controlbox-name" :class="{'active': filterVal == 'sales'}">销量</span>
-            <input type="radio" name="order" value="sales" v-model="filterVal">
-          </label>
-          <label>
-            <span class="controlbox-name" :class="{'active': filterVal == 'distance'}">距离</span>
-            <input type="radio" name="order" value="distance" v-model="filterVal">
-          </label>
+          <span class="item-header-controlbox-label" v-for="(item,index) in orderList" :key="'order' + index">
+            <label :for="item.value" :class="{'active': filterVal == item.value}">{{item.name}}</label>
+            <input type="radio" name="order" :value="item.value" :id="item.value" v-model="filterVal">
+          </span>  
         </span>
       </div>
       <shop-list :sort="filterVal"></shop-list>
@@ -102,7 +94,21 @@ export default {
           icon: "icon-waimaisongquan"
         }
       ],
-      filterVal: "goal"
+      filterVal: "goal",
+      orderList: [
+        {
+          name: "评分",
+          value: "goal"
+        },
+        {
+          name: "销量",
+          value: "sales"
+        },
+        {
+          name: "距离",
+          value: "distance"
+        }
+      ]
     };
   },
   mounted() {
@@ -188,10 +194,13 @@ export default {
 
         &-controlbox
           vertical-align middle
-          > label 
-            cursor pointer
+          &-label
+            > label
+              cursor pointer
+
             > .active
               color $mainColor
-            > input 
+
+            > input
               visibility hidden
 </style>

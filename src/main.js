@@ -4,7 +4,7 @@ import router from './router/router'
 import store from './store/index'
 
 import "babel-polyfill"; //解决IE兼容
-import "current-script-polyfill";
+// import "current-script-polyfill";
 
 // 引入公共css文件
 import '../public/css/reset.css'
