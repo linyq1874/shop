@@ -54,27 +54,32 @@ export default {
 
 footer
   top-border-1px($BGColor)
+  display flex
+  align-items center
 
-  ul
-    display flex
-    justify-content space-between
-    padding-top 0.7rem
+  nav
+    width 100%
+    height 80%
 
-    .navItem
-      text-align center
-      width 25%
-      height 100%
-      cursor pointer
-      color #888
+    ul
+      display flex
+      justify-content space-between
 
-      .iconfont
-        display block
-        font-size 3rem
-        padding-bottom 0.5rem
+      .navItem
+        text-align center
+        width 25%
+        height 100%
+        cursor pointer
+        color #888
 
-      .navName
-        font-size 1.4rem
+        .iconfont
+          display block
+          font-size 3rem
+          padding-bottom 0.5rem
 
-    .active
-      color $green
+        .navName
+          font-size 1.4rem
+
+      .active
+        color $mainColor
 </style>

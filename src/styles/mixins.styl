@@ -1,5 +1,5 @@
-$green = #02a774;
-$yellow = #f5a100;
+$mainColor = #02a774;
+$minorColor = #f5a100;
 $BGColor = #e4e4e4;
 
 // 一像素下边框
@@ -23,7 +23,7 @@ top-border-1px($color)
   &::before
     content ''
     position absolute
-    z-index 9
+    z-index 2
     left 0
     top 0  
     width 100%
@@ -55,3 +55,9 @@ clearFix()
     content ''
     display block
     clear both
+
+// 省略号结尾
+ellipsis() 
+  overflow hidden
+  white-space nowrap
+  text-overflow ellipsis

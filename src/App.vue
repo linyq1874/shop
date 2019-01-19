@@ -29,6 +29,8 @@ export default {
 
   main
     height 90%
+    overflow hidden
+    box-sizing border-box
 
   footer
     height 10%
