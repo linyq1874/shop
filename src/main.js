@@ -12,7 +12,10 @@ import '../public/css/reset.css'
 // 引入全局过滤器
 import './filters/index'
 
-// 移动端快速点击
+/**
+ * 1. 移动端浏览器在派发点击事件的时候，通常会出现300ms左右的延迟
+ * 2. 原因: 移动端的双击会缩放导致click判断延迟
+ */
 const FastClick = require('fastclick')
 FastClick.attach(document.body)
 

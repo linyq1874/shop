@@ -36,10 +36,20 @@
         <span class="item-header-text">附近商家</span>
         <span class="item-header-controlbox">
           <span class="controlbox-tag">排序：</span>
-          <span class="item-header-controlbox-label" v-for="(item,index) in orderList" :key="'order' + index">
+          <span
+            class="item-header-controlbox-label"
+            v-for="(item,index) in orderList"
+            :key="'order' + index"
+          >
             <label :for="item.value" :class="{'active': filterVal == item.value}">{{item.name}}</label>
-            <input type="radio" name="order" :value="item.value" :id="item.value" v-model="filterVal">
-          </span>  
+            <input
+              type="radio"
+              name="order"
+              :value="item.value"
+              :id="item.value"
+              v-model="filterVal"
+            >
+          </span>
         </span>
       </div>
       <shop-list :sort="filterVal"></shop-list>
@@ -194,6 +204,7 @@ export default {
 
         &-controlbox
           vertical-align middle
+
           &-label
             > label
               cursor pointer
